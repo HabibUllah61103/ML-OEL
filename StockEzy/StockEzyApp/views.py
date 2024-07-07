@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 #from .models import Electronics, Garments, Groceries, Products, Shoppingcarts, Customers, Cartcontainers, Orders
 from django.contrib.auth import authenticate, login, logout
-from .forms import SigninForm, SignupForm
+from .forms import SigninForm, SignupForm,MainForm
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from django.db import connection
-from .models import Customers
+from .models import Customers,History
 
 import pickle
 
