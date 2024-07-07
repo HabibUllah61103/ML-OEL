@@ -36,9 +36,11 @@ def dashboad_view(request, customer_id):
     }
     return render(request, 'dashboard.html', context=context)
 
-def dashboad_view(request, customer_id):
-    return HttpResponse("Hello, world. You're at the StockEzy index.")
-
+def customer_profile(request,customer_id):
+    customer = Customers.objects.get(custid=customer_id)
+    context = {'customer': customer}
+    return render(request, 'profile.html', context)
+    
 def customer_signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
