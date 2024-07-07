@@ -40,7 +40,18 @@ def customer_profile(request,customer_id):
     customer = Customers.objects.get(custid=customer_id)
     context = {'customer': customer}
     return render(request, 'profile.html', context)
-    
+
+def history_view(request, customer_id):
+    customer = Customers.objects.get(custid=customer_id)
+    customers_history = History.objects.all()
+    history = []
+    for i in customers_history:
+        if i.custid.custid == customer_id:
+            history.append(i)
+       
+    context = {'history': history}
+    return render(request, 'tables.html', context)
+
 def customer_signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
