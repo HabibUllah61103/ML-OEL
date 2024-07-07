@@ -29,6 +29,7 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg blur blur-rounded top-0 z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
           <div class="container-fluid">
+            <img src="{% static '/img/favicon.png' %}" alt="main_logo" width="30" height="30" style="margin-right: 7px;">
             <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="/customer_signin">
               StockEzy
             </a>
@@ -54,7 +55,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link me-2" href="/customer_signup">
+                  <a class="nav-link me-2" href="/">
                     <i class="fas fa-user-circle opacity-6 text-dark me-1"></i>
                     Sign Up
                   </a>
@@ -90,7 +91,6 @@
                     <label>Email</label>
                     <div class="mb-3">
                       {{ form.cemail }}
-                    </input>
                     </div>
                     <label>Password</label>
                     <div class="mb-3">
@@ -109,7 +109,7 @@
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-4 text-sm mx-auto">
                     Don't have an account?
-                    <a href="/customer_signup" class="text-info text-gradient font-weight-bold">Sign up</a>
+                    <a href="/" class="text-info text-gradient font-weight-bold">Sign up</a>
                   </p>
                 </div>
               </div>
