@@ -14,3 +14,16 @@ class Customers(models.Model):
     class Meta:
         managed = True
         db_table = 'customers'
+
+class History(models.Model):
+    histid = models.AutoField(db_column='HistID', primary_key=True)
+    custid = models.ForeignKey(Customers, db_column='CustID', on_delete=models.CASCADE)
+    open = models.CharField(db_column='Open', max_length=100)
+    high = models.CharField(db_column='High', max_length=100)
+    low = models.CharField(db_column='Low', max_length=100)
+    volume = models.CharField(db_column='Volume', max_length=100)
+    close = models.CharField(db_column='Close', max_length=100)
+
+    class Meta:
+        managed = True
+        db_table = 'history'
