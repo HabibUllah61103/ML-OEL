@@ -2,6 +2,12 @@ from django import forms
 from .models import Customers
 from django.core.exceptions import ValidationError
 
+class MainForm(forms.Form): 
+    open = forms.CharField(max_length=100, widget=forms.NumberInput(attrs={'placeholder': 'Open price'}))
+    high = forms.CharField(max_length=100, widget=forms.NumberInput(attrs={'placeholder': 'High price'}))
+    low = forms.CharField(max_length=100, widget=forms.NumberInput(attrs={'placeholder': 'Low price'}))
+    volume = forms.CharField(max_length=100, widget=forms.NumberInput(attrs={'placeholder': 'Volume'}))
+    close = forms.IntegerField()
 
 class SigninForm(forms.Form):
     cemail = forms.EmailField(
